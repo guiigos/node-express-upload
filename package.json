@@ -1,15 +1,17 @@
 {
   "name": "node-upload",
-  "version": "1.0.0",
   "description": "Upload de arquivos",
   "author": "Guilherme Alves (www.guiigos.com)",
+  "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "keywords": [
     "node",
-    "upload"
+    "upload",
+    "busboy",
+    "multer"
   ],
   "dependencies": {
     "busboy": "^0.2.13",

@@ -1,5 +1,5 @@
 # Node Upload
-> Projeto de exemplo de upload de arquivos.
+> Projeto de exemplo de upload de arquivos
 
 ### Rotas
 
@@ -7,7 +7,7 @@
 
 > **POST** */busboy* [busboy](https://github.com/mscdex/busboy) realiza o upload da imagem para o [transfer.sh](https://transfer.sh/)
 
-### Instalar as dependências NPM
+### Instalar as dependências
 ```sh
 $ npm install
 ```

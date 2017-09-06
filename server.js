@@ -1,24 +1,24 @@
 'user strict'
 
-let express     = require('express');
-let multer      = require('multer');
-let busboy      = require('busboy');
-let request     = require('request');
-let fs          = require('fs');
+let express = require('express');
+let multer = require('multer');
+let busboy = require('busboy');
+let request = require('request');
+let fs = require('fs');
 
 let app = express();
 let upload = multer({ dest: 'uploads/' });
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.send('<h1>Exemplo de ulpload de arquivos.</h1><br><p>Utilize <strong>POST</strong> nas rotas <strong>/busboy</strong> ou <strong>/multer</strong>');
 })
 
-app.post('/multer', upload.single('avatar'), function(req, res) {
+app.post('/multer', upload.single('avatar'), function (req, res) {
     console.log(req.file)
     console.log('Gravou o arquivo!')
 
     // deletar arquivo
-    fs.unlink(`./upload/${req.file.filename}`, 
+    fs.unlink(`./upload/${req.file.filename}`,
         (err) => {
             if (err) throw err
             else console.log('Deletou o arquivo!')
@@ -33,7 +33,7 @@ app.post('/busboy', (req, res) => {
 
     uploaded.on('file', (field, stream, name) => {
         counter++
-        
+
         stream.pipe(request.put(`https://transfer.sh/${name}`, (err, response) => {
             if (err) throw err
 
