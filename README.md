@@ -1,10 +1,9 @@
-# Node Upload
+# NodeJs Upload
 > Projeto de exemplo de upload de arquivos
 
 ### Rotas
 
 > **POST** */multer* [multer](https://github.com/expressjs/multer)
-
 > **POST** */busboy* [busboy](https://github.com/mscdex/busboy) realiza o upload da imagem para o [transfer.sh](https://transfer.sh/)
 
 ### Instalar as dependências
