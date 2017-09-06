@@ -1,7 +1,8 @@
 {
   "name": "node-upload",
   "description": "Upload de arquivos",
-  "author": "Guilherme Alves (www.guiigos.com)",
+  "author": "Guilherme Alves",
+  "homepage": "http://www.guiigos.com",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
