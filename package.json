@@ -1,7 +1,7 @@
 {
   "name": "node-upload",
   "version": "1.0.0",
-  "description": "Exemplo de upload de arquivos",
+  "description": "Example of uploading files",
   "keywords": [
     "download",
     "node",
@@ -29,6 +29,6 @@
     "request": "2.83.0"
   },
   "devDependencies": {
-    "nodemon": "1.14.11"
+    "nodemon": "1.14.12"
   }
 }

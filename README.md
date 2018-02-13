@@ -1,37 +1,37 @@
 # NodejS Upload
-> Projeto de exemplo de upload de arquivos com **NodeJs**.
-> - [Utilização](#utiliza%C3%A7%C3%A3o)
->   - [Ambiente](#ambiente)
->   - [Dependências](#depend%C3%AAncias)
->   - [Executar](#executar)
-> - [Rotas](#rotas)
-> - [Licença](#licen%C3%A7a)
+> Sample file upload project with **NodeJs**.
+> - [Usage](#usage)
+>   - [Environment](#environment)
+>   - [Dependencies](#dependencies)
+>   - [Run](#run)
+> - [Routes](#routes)
+> - [License](#licensea)
 
-## Utilização
-### Ambiente
-Instalação
+## Usage
+### Environment
+Installation
 ```bash
 $ npm install npm -g
 ```
 
-### Dependências
-Instalar dependências e módulos
+### Dependencies
+Install dependencies and modules
 ```bash
 $ npm install
 ```
 
-### Executar
-Compilar projeto
+### Run
+Compile project
 ```bash
 $ npm start
 $ npm run nodemon
 ```
 
-## Rotas
+## Routes
 - **POST** */multer* [multer](https://github.com/expressjs/multer)
-- **POST** */busboy* [busboy](https://github.com/mscdex/busboy) realiza o upload da imagem para o [transfer.sh](https://transfer.sh/)
+- **POST** */busboy* [busboy](https://github.com/mscdex/busboy) uploads image to [transfer.sh](https://transfer.sh/)
 
-## Licença
-Projeto desenvolvido para fins acadêmicos.
+## License
+Project developed for academic purposes.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
