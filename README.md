@@ -1,5 +1,6 @@
 # NodejS Upload
 > Sample file upload project with **NodeJs**.
+> - [Overview](#overview)
 > - [Usage](#usage)
 >   - [Environment](#environment)
 >   - [Dependencies](#dependencies)
@@ -7,21 +8,24 @@
 > - [Routes](#routes)
 > - [License](#licensea)
 
+## Overview
+Example of performing uploading and downloading files using NodeJs in a simple way using some libraries that make the job easier. 
+
 ## Usage
 ### Environment
-Installation
+Commands to install the development environment.
 ```bash
 $ npm install npm -g
 ```
 
 ### Dependencies
-Install dependencies and modules
+Install dependencies and modules.
 ```bash
 $ npm install
 ```
 
 ### Run
-Compile project
+After installing the dependencies the application is ready to run.
 ```bash
 $ npm start
 $ npm run nodemon
