@@ -33,7 +33,8 @@ $ npm run nodemon
 
 ## Routes
 - **POST** */multer* [multer](https://github.com/expressjs/multer)
-- **POST** */busboy* [busboy](https://github.com/mscdex/busboy) uploads image to [transfer.sh](https://transfer.sh/)
+- **POST** */busboy* [busboy](https://github.com/mscdex/busboy) 
+- **POST** */formidable* [formidable](https://github.com/felixge/node-formidable) 
 
 ## License
 Project developed for academic purposes.

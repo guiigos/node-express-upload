@@ -1,7 +1,7 @@
 # folders
 node_modules/
 dist/
-uploads/
+assets/
 .vscode/
 
 # files
