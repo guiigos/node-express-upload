@@ -11,7 +11,7 @@ const mime = require('mime');
 const fs = require('fs');
 
 const handlers = require('./src/responses/handlers');
-const routerMulter = require('./src/routeMulter');
+const routerMulter = require('./src/routerMulter');
 const routerBusBoy = require('./src/routerBusBoy');
 const routerFormidable = require('./src/routerFormidable');
 
@@ -33,33 +33,30 @@ app.use('/formidable', routerFormidable(express.Router, dest));
 
 app.use(express.static(__dirname));
 
-app.get('/get/:file', (req, res, next) => {
-  if (!req.params.file) {
-    return handlers.error(req, res, 'Parameter not informed');
-  }
+app.get('/image', (req, res, next) => {
+  const images = fs.readdirSync(path.join(__dirname, dest));
+  return handlers.success(req, res, images);
+});
 
-  let filePath = path.join(__dirname, dest, req.params.file);
+app.get('/image/:file', (req, res, next) => {
+  const filePath = path.join(__dirname, dest, req.params.file);
   if (!fs.existsSync(filePath)) {
     return handlers.error(req, res, 'File not found');
   }
 
-  var image = fs.readFileSync(filePath);
+  const image = fs.readFileSync(filePath);
   res.writeHead(httpStatus.OK, { 'Content-Type': mime.getType(filePath) });
   res.end(image, 'binary');
 });
 
 app.get('/transfer/:file', (req, res, next) => {
-  if (!req.params.file) {
-    return handlers.error(req, res, 'Parameter not informed');
-  }
-
   let filePath = path.join(__dirname, dest, req.params.file);
   if (!fs.existsSync(filePath)) {
     return handlers.error(req, res, 'File not found');
   }
 
   fs.createReadStream(path.join(dest, req.params.file))
-    .pipe(request.put(`https://transfer.sh/${req.params.file.split('.').slice(0, -1).join('.')}`, (error, response) => {
+    .pipe(request.put(`https://transfer.sh/${req.params.file}`, (error, response) => {
       if (error) {
         return handlers.error(req, res, error.message);
       }
@@ -79,6 +76,5 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Server listen
 var port = Number(process.env.PORT || 3000);
 app.listen(port, () => console.log(`Server listen on port ${port}.`));

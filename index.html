@@ -8,27 +8,74 @@
   <meta name="description" content="Example of uploading files">
 
   <title>node-upload</title>
+
+  <script>
+    const syncImages = () => {
+      const element = document.getElementById('images');
+      while (element.firstChild) {
+        element.firstChild.remove();
+      }
+
+      fetch('/image', {
+        method: 'GET'
+      })
+      .then((response) => response.json())
+      .then(({ files }) => {
+        element.append(...files.map((file) => {
+          const open = document.createElement('a');
+          open.setAttribute('href', `/image/${file}`);
+          open.style.margin = '20px';
+          open.textContent = file;
+
+          const transfer = document.createElement('a');
+          transfer.setAttribute('href', `/transfer/${file}`);
+          transfer.style.margin = '20px';
+          transfer.textContent = 'Transfer';
+
+          const li = document.createElement('li');
+          li.append(transfer, open);
+
+          return li;
+        }));
+      })
+      .catch(console.error);
+    }
+  </script>
 </head>
 
 <body>
   <h1>Files ulpload example</h1>
-  <ul>
-    <li>
-      <p>Upload using <a href="https://github.com/expressjs/multer" target="_blank">multer</a>, use <strong>POST</strong> on route <strong>/multer</strong></p>
-    </li>
-    <li>
-      <p>Upload using <a href="https://github.com/mscdex/busboy" target="_blank">busboy</a>, use <strong>POST</strong>on route <strong>/busboy</strong></p>
-    </li>
-    <li>
-      <p>Upload using <a href="https://github.com/felixge/node-formidable" target="_blank">formidable</a>, use <strong>POST</strong> on route <strong>/formidable</strong></p>
-    </li>
-    <li>
-      <p>Download image use <strong>GET</strong> on route <strong>/get/:file</strong></p>
-    </li>
-    <li>
-      <p>Uploads image to <a href="https://transfer.sh/" target="_blank">transfer.sh</a> on route <strong>/transfer/:file</strong></p>
-    </li>
-  </ul>
+
+  <br>
+  <div>
+    <p>Upload using <a href="https://github.com/expressjs/multer" target="_blank">multer</a>, use <strong>POST</strong> on route <strong>/multer</strong></p>
+    <form action="/multer" method="post" enctype="multipart/form-data">
+      <input type="file" name="avatar" onchange="form.submit()" />
+    </form>
+  </div>
+
+  <br>
+  <div>
+    <p>Upload using <a href="https://github.com/mscdex/busboy" target="_blank">busboy</a>, use <strong>POST</strong>on route <strong>/busboy</strong></p>
+    <form action="/busboy" method="post" enctype="multipart/form-data">
+      <input type="file" name="avatar" onchange="form.submit()" />
+    </form>
+  </div>
+
+  <br>
+  <div>
+    <p>Upload using <a href="https://github.com/felixge/node-formidable" target="_blank">formidable</a>, use <strong>POST</strong> on route <strong>/formidable</strong></p>
+    <form action="/formidable" method="post" enctype="multipart/form-data">
+      <input type="file" name="avatar" onchange="form.submit()" />
+    </form>
+  </div>
+
+  <br>
+  <br>
+  <div>
+    <button onclick="syncImages()">Sync images</button>
+    <ul id="images"></ul>
+  </div>
 </body>
 
 </html>

@@ -5,20 +5,18 @@ module.exports = function (router, destination) {
   let route = router();
 
   route.post('/', (req, res, next) => {
-    const propertyName = 'avatar';
-
     const upload = multer({
       storage: multer.diskStorage({
         destination: (req, file, cb) => {
           cb(null, destination);
         },
         filename: (req, file, cb) => {
-          cb(null, `multer_${file.fieldname}_${file.originalname}`);
+          cb(null, `multer_${file.fieldname}_${Date.now()}_${file.originalname}`);
         },
       }),
     });
 
-    let request = upload.single(propertyName);
+    const request = upload.single('avatar');
 
     request(req, res, (error) => {
       if (error) {
