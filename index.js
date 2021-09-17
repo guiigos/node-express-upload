@@ -76,5 +76,4 @@ app.use((err, req, res, next) => {
   next();
 });
 
-var port = Number(process.env.PORT || 3000);
-app.listen(port, () => console.log(`Server listen on port ${port}.`));
+app.listen(Number(process.env.PORT || 3000));
