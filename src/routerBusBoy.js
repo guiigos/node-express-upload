@@ -3,7 +3,7 @@ const path = require('path');
 const busboy = require('busboy');
 const handlers = require('./responses/handlers');
 
-module.exports = function (router, destination) {
+module.exports = (router, destination) => {
   let route = router();
 
   route.post('/', (req, res, next) => {
