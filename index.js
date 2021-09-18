@@ -66,13 +66,18 @@ app.get('/transfer/:file', (req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  res.status(httpStatus.NOT_FOUND).send('Page not found!');
+  res
+    .status(httpStatus.NOT_FOUND)
+    .send('Page not found!');
+
   next();
 });
 
 app.use((err, req, res, next) => {
-  const status = err.status || httpStatus.INTERNAL_SERVER_ERROR;
-  res.status(status).send(`Unidentified Error - ${err.message}`);
+  res
+    .status(httpStatus.INTERNAL_SERVER_ERROR)
+    .send(`Unidentified Error - ${err.message}`);
+
   next();
 });
 
