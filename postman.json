@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "a182740d-6aed-4f2f-a707-2ed5ca258911",
+		"name": "Upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Get all images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/images",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get image by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/images/image.jpg",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"images",
+								"image.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/transfer/name.jpg",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transfer",
+								"name.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload by Multer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"description": "File to upload",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/multer",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"multer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload by BusBoy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"description": "File to upload",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/busboy",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"busboy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload by Formidable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"description": "File to upload",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/formidable",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"formidable"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000"
+		}
+	]
+}

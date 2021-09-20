@@ -1,5 +1,5 @@
 const multer = require('multer');
-const handlers = require('./responses/handlers');
+const handlers = require('../helper/handlers');
 
 module.exports = (router, destination) => {
   let route = router();

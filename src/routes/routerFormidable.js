@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const formidable = require('formidable');
-const handlers = require('./responses/handlers');
+const handlers = require('../helper/handlers');
 
 module.exports = (router, destination) => {
   let route = router();
