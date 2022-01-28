@@ -13,12 +13,14 @@ Example of performing uploading and downloading files using NodeJs in a simple w
 ## Usage
 ### Dependencies
 Install dependencies and modules.
+
 ```bash
 $ npm install
 ```
 
 ### Run
 After installing the dependencies the application is ready to run.
+
 ```bash
 $ npm start
 $ npm run nodemon
