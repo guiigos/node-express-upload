@@ -1,5 +1,5 @@
 {
-  "name": "node-upload",
+  "name": "node-express-upload",
   "version": "1.0.0",
   "description": "Example of uploading files",
   "keywords": [
