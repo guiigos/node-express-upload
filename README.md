@@ -1,4 +1,4 @@
-# NodeJs Upload
+# Node Express Upload
 > Sample file upload project with **NodeJs**.
 > - [Overview](#overview)
 > - [Usage](#usage)
