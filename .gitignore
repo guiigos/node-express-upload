@@ -1,11 +1,37 @@
-# folders
-node_modules/
-dist/
-assets/
-.vscode/
+# temp
+*.tmp
+*.tmp.*
 
-# files
+# log
 *.log
-*.DS_Store
-npm-debug.log
+*.log.*
+
+# dotenv
+.env
+
+# editor
+.vscode
+
+# build
+dist
+
+# yarn
+yarn-debug.log*
+yarn-error.log*
+
+# npm
+npm-debug.log*
 package-lock.json
+
+# modules
+node_modules
+
+# macos
+._*
+.DS_Store
+.DS_Store?
+.Trashes
+Thumbs.db
+
+# project
+assets
