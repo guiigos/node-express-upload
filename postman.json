@@ -1,6 +1,5 @@
 {
 	"info": {
-		"_postman_id": "a182740d-6aed-4f2f-a707-2ed5ca258911",
 		"name": "Upload",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -151,7 +150,7 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://localhost:3000"
+			"value": "http://localhost:3030"
 		}
 	]
 }
