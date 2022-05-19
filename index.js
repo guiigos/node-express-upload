@@ -1,5 +1,3 @@
-'user strict'
-
 const bodyParser = require('body-parser');
 const httpStatus = require('http-status');
 const express = require('express');
