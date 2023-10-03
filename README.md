@@ -39,4 +39,4 @@ $ npm run nodemon
 ## License
 Project developed for academic purposes.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/github/license/guiigos/node-express-upload?style=flat-square)](./LICENSE)
