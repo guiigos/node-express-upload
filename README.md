@@ -2,20 +2,6 @@
 
 Example of performing uploading and downloading files using NodeJs in a simple way using some libraries that make the job easier. 
 
-<details>
-  <summary>
-    <strong>:pushpin: Menu</strong>
-  </summary>
-  <br>
-  
-> - [_**Usage**_](#usage)
->   - [_Dependencies_](#dependencies)
->   - [_Scripts_](#scripts)
-> - [_**Routes**_](#routes)
-> - [_**License**_](#license)
-  
-</details>
-
 ## Usage
 ### Dependencies
 
