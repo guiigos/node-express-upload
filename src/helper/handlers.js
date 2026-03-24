@@ -1,4 +1,4 @@
-const httpStatus = require('http-status');
+const httpStatus = require("http-status");
 
 module.exports = {
   success: (req, res, files, status = httpStatus.OK) => {

@@ -1,37 +1,46 @@
-# Diagnostic reports
+# Dependency
+node_modules
+
+# Diagnostic
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Cache
 .npm
 
-# Logs
-*.log
-*.log.*
-npm-debug.log*
-
-# Build
-dist
-
-# Coverage
-coverage
-*.lcov
-.nyc_output
-
-# Dependency
-node_modules
-
 # Environment
 .env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+.env.*
+!.env.example
+
+# Build
+dist/
+build/
 
 # Temp
 *.tmp
 *.tmp.*
+tmp/
+temp/
 
-# MacOs
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+*.lcov
+
+# MacOS
 ._*
 .DS_*
 .DS_Store

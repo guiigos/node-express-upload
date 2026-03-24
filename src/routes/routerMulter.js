@@ -1,10 +1,10 @@
-const multer = require('multer');
-const handlers = require('../helper/handlers');
+const multer = require("multer");
+const handlers = require("../helper/handlers");
 
 module.exports = (router, destination) => {
   let route = router();
 
-  route.post('/', (req, res, next) => {
+  route.post("/", (req, res, next) => {
     const upload = multer({
       storage: multer.diskStorage({
         destination: (req, file, cb) => {
@@ -16,7 +16,7 @@ module.exports = (router, destination) => {
       }),
     });
 
-    const request = upload.single('avatar');
+    const request = upload.single("avatar");
 
     request(req, res, (error) => {
       if (error) {

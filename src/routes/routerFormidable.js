@@ -1,26 +1,26 @@
-const fs = require('fs');
-const path = require('path');
-const formidable = require('formidable');
-const handlers = require('../helper/handlers');
+const fs = require("fs");
+const path = require("path");
+const formidable = require("formidable");
+const handlers = require("../helper/handlers");
 
 module.exports = (router, destination) => {
   let route = router();
 
-  route.post('/', (req, res, next) => {
+  route.post("/", (req, res, next) => {
     let form = formidable.IncomingForm({
       uploadDir: destination,
       multiples: false,
     });
 
-    form.once('error', console.error);
-    form.once('end', () => {});
+    form.once("error", console.error);
+    form.once("end", () => { });
 
-    form.on('file', (fieldname, file) => {
+    form.on("file", (fieldname, file) => {
       const name = `formidable_${fieldname}_${Date.now()}_${file.name}`;
-      fs.rename(file.path, path.join(form.uploadDir, name), () => form.emit('data', [name]));
+      fs.rename(file.path, path.join(form.uploadDir, name), () => form.emit("data", [name]));
     });
 
-    form.on('data', (files) => {
+    form.on("data", (files) => {
       return handlers.success(req, res, files);
     });
 
